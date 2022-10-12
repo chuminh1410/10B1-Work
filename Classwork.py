@@ -1,3 +1,5 @@
+from pickle import APPEND
+from re import X
 from shutil import which
 from tkinter import N
 from tkinter.messagebox import YES
@@ -7,16 +9,8 @@ print("Ticket price: For one adult cost for two-day is $30.00 \nTicket price: Fo
 print("Attraction is also available include:\nLion feeding is $2.50\nPengiun feeding is $2.00\nEvening barbeque (two-day ticket only) $5.00\n")
 print("This is the day that are still available to book: Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday. ")
 # Setting up stuff... (making variable for each option)
-adultone = 20.00
-adulttwo = 30.00
-childone = 12.00
-childtwo = 18.00
-seniorone = 16.00
-seniortwo = 24.00
-familyone = 60.00
-familytwo = 90.00
-groupone = 15.00
-grouptwo = 22.50
+cost = ['20.00', '30.00', '12.00', '18.00', '16.00',
+        '24.00', '60.00', '90.00', '15.00', '22.00']
 lion = 2.50
 penguin = 2.00
 barbeque = 5.00
@@ -24,5 +18,30 @@ barbeque = 5.00
 total = ""
 continue1 = True
 while continue1 == True:
-    a = input("Input 1 to choose adult one day\n 2 to choose adult for two-day\n 3 to choose child for one day\n 4 to choose child for two-day\n 5 to choose senior for one day\n 6 to choose senior for two-day\n 7 to choose family for one day\n 8 to choose family for two-day\n 9 to choose group for one day\n 10 to choose group for two-day")
-    continue1 = False
+    print("\nInput 1 to choose adult one day\n 2 to choose adult for two-day\n 3 to choose child for one day\n 4 to choose child for two-day\n 5 to choose senior for one day\n 6 to choose senior for two-day\n 7 to choose family for one day\n 8 to choose family for two-day\n 9 to choose group for one day\n 10 to choose group for two-day")
+    a = int(input("Your option?:"))
+    if a == 1:
+        x = cost[0]
+    elif a == 2:
+        x = cost[1]
+    elif a == 3:
+        x = cost[2]
+    elif a == 4:
+        x = cost[3]
+    elif a == 5:
+        x = cost[4]
+    elif a == 6:
+        x = cost[5]
+    elif a == 7:
+        x = cost[6]
+    elif a == 8:
+        x = cost[7]
+    elif a == 9:
+        x = cost[8]
+    elif a == 10:
+        x = cost[9]
+
+    ans = input("Do you want to buy more tickets?: (Y/N)")
+    if ans == "N":
+        continue1 = False
+print(x)
