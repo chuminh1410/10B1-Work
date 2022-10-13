@@ -15,33 +15,43 @@ lion = 2.50
 penguin = 2.00
 barbeque = 5.00
 # Setting up for user to input stuff
-total = ""
+total = 0
 continue1 = True
 while continue1 == True:
     print("\nInput 1 to choose adult one day\n 2 to choose adult for two-day\n 3 to choose child for one day\n 4 to choose child for two-day\n 5 to choose senior for one day\n 6 to choose senior for two-day\n 7 to choose family for one day\n 8 to choose family for two-day\n 9 to choose group for one day\n 10 to choose group for two-day")
     a = int(input("Your option?:"))
     if a == 1:
         x = cost[0]
+        x + total
     elif a == 2:
         x = cost[1]
+        x + total
     elif a == 3:
         x = cost[2]
+        x + total
     elif a == 4:
         x = cost[3]
+        x + total
     elif a == 5:
         x = cost[4]
+        x + total
     elif a == 6:
         x = cost[5]
+        x + total
     elif a == 7:
         x = cost[6]
+        x + total
     elif a == 8:
         x = cost[7]
+        x + total
     elif a == 9:
         x = cost[8]
+        x + total
     elif a == 10:
         x = cost[9]
+        x + total
 
     ans = input("Do you want to buy more tickets?: (Y/N)")
     if ans == "N":
         continue1 = False
-print(x)
+print(total)
