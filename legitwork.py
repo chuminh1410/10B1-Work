@@ -43,14 +43,19 @@ while bookingopen == "Y":
         numsenior = int(input("How many senior tickets ?"))
         numfamily = int(input("How many family ?"))
         numadult = int(input("How many adult tickets ?"))
-        if numadult == 6:
-            ans = input("You have 6 adults, would you like to change into group ticket instead ? (Y/N)")
+        if numadult >= 6:
+            ans = input("You have 6 or more adults, would you like to change into group ticket instead ? (Y/N)")
             if ans == "Y":
+                numadult = 0
                 numgroup = int(input("How many people in groups ?"))
                 group = False
             else:
+                numadult = int(input("How many adult tickets ?"))
                 numgroup = int(input("How many people in groups ?"))
                 group = False
+        else:
+            numgroup = int(input("How many people in groups ?"))
+            group = False
 
     if numdays == 1:
         daysofweek = input("Your booking day is: Monday, Tuesday, Wednesday, Thursday, Friday")
