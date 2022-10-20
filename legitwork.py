@@ -1,4 +1,5 @@
 # store data in arrays
+from operator import truediv
 from tkinter.tix import DisplayStyle
 
 
@@ -34,13 +35,22 @@ while bookingopen == "Y":
     booking_number =  booking_number + 1
     numdays = int(input("Would you like to book for one day or two? Type 1 or 2"))
     while numdays != 1 and numdays != 2:
-        numdays = int(input("Would you like to book for one day or two? Type 1 or 2"))
-
-    numadult = int(input("How many adult tickets ?"))
-    numchild = int(input("How many child tickets ?"))
-    numsenior = int(input("How many senior tickets ?"))
-    numfamily = int(input("How many family ?"))
-    numgroup = int(input("How many groups ?"))
+        numdays = int(input("Error: Would you like to book for one day or two? Type 1 or 2"))
+    
+    group = True
+    while group == True:
+        numchild = int(input("How many child tickets ?"))
+        numsenior = int(input("How many senior tickets ?"))
+        numfamily = int(input("How many family ?"))
+        numadult = int(input("How many adult tickets ?"))
+        if numadult == 6:
+            ans = input("You have 6 adults, would you like to change into group ticket instead ? (Y/N)")
+            if ans == "Y":
+                numgroup = int(input("How many people in groups ?"))
+                group = False
+            else:
+                numgroup = int(input("How many people in groups ?"))
+                group = False
 
     if numdays == 1:
         daysofweek = input("Your booking day is: Monday, Tuesday, Wednesday, Thursday, Friday")
