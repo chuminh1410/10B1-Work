@@ -1,15 +1,7 @@
+with open('test.txt','r') as f:
+    size_to_read = 10 
+    f_contents = f.read(size_to_read)
 
-colors = []
-for i in range(10):
-    color = input("Enter a color: ")
-    colors.append(color)
-
-with open("colors.txt", "w") as f:
-    for color in colors:
-        line = color + "\n"  
-        f.write(line)
-
-with open("colors.txt", "r") as f:
-    for line in f:
-        color = line.strip() 
-        print(color)
+    while len(f_contents) > 0:
+        print(f_contents, end = '')
+        f_contents = f.read(size_to_read)
