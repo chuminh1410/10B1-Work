@@ -1,12 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <title>Fireant API Example</title>
 </head>
 <body>
-    <video preload="metadata" src="https://stream.tructiepnba.com/20da9970-3e3a-4941-9a70-e11be3ce36cc"></video>
+  <h1>Fireant API Example</h1>
+  <form id="search-form">
+    <input type="text" id="company-symbol" placeholder="Enter company symbol" required>
+    <button type="submit">Search</button>
+  </form>
+  <div id="result"></div>
+
+  <script>
+    const form = document.getElementById('search-form');
+    const companySymbolInput = document.getElementById('company-symbol');
+    const resultDiv = document.getElementById('result');
+
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      const symbol = companySymbolInput.value;
+      fetch(`https://api.fireant.vn/quote/${symbol}`)
+        .then(response => response.json())
+        .then(data => {
+          const quote = data[0];
+          resultDiv.innerHTML = `
+            <h2>${quote.symbol}</h2>
+            <p>Last Price: ${quote.lastPrice}</p>
+            <p>Change: ${quote.change}</p>
+            <p>Percent Change: ${quote.percentChange}</p>
+          `;
+        })
+        .catch(error => {
+          resultDiv.innerHTML = `<p>Error: ${error.message}</p>`;
+        });
+    });
+  </script>
 </body>
 </html>
