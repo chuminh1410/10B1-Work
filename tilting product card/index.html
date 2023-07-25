@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Tilting Product Cards</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/1.8.13/tailwind.min.css'><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="min-h-screen bg-gray-900 pb-20 grid">
+  <h1 class='flex items-end justify-center h-full w-full text-3xl text-white font-thin uppercase'>Hover me</h1>
+  
+  <div class='grid place-items-center lg:grid-cols-3 _container gap-y-10'>
+  <div class="card rounded-lg px-8 py-20 relative hover:shadow-xl">
+    <h2 class="name text-gray-100 text-center text-xl font-medium uppercase transition-all duration-500 opacity-0 z-10 absolute top-0 left-0 w-full">Cyberpunk 2077</h2>
+    <a href="https://www.cyberpunk.net/us/en/pre-order" class="buy buy-cyberpunk absolute bottom-0 bg-gray-600 text-white hover:text-black font-medium px-4 py-2 rounded-full transition-all duration-500 opacity-0 z-10 bg-cyberpunk">Buy Now</a>
+    <div class="image image-1">
+      <img src="https://images.igdb.com/igdb/image/upload/t_cover_big/co1rft.jpg" alt="Cyberpunk 2077" class="product rounded transition-all duration-500">  
+    </div>  
+  </div>
+  
+  <div class="card rounded-lg px-8 py-20 relative hover:shadow-xl">
+    <h2 class="name text-gray-100 text-center text-xl font-medium uppercase transition-all duration-500 opacity-0 z-10 absolute top-0 left-0 w-full">Among Us</h2>
+    <a href="https://store.steampowered.com/app/945360/Among_Us/" class="buy buy-among-us absolute bottom-0 bg-gray-600 hover:bg-gray-500 text-white px-4 py-2 rounded-full transition-all duration-500 opacity-0 z-10 bg-among-us">Buy Now</a>
+    <div class="image image-2">
+      <img src="https://images.igdb.com/igdb/image/upload/t_cover_big/co1uaf.jpg" alt="Among Us" class="product rounded transition-all duration-500">
+    </div>
+  </div>
+  
+  <div class="card rounded-lg px-8 py-20 relative hover:shadow-xl">
+    <h2 class="name text-gray-100 text-center text-xl font-medium uppercase transition-all duration-500 opacity-0 z-10 absolute top-0 left-0 w-full">Fall Guys</h2>
+    <a href="https://store.steampowered.com/app/1097150/Fall_Guys_Ultimate_Knockout/" class="buy buy-fall-guys absolute bottom-0 bg-gray-600 hover:bg-gray-500 text-white px-4 py-2 rounded-full transition-all duration-500 opacity-0 z-10 bg-fall-guys">Buy Now</a>
+    <div class="image image-3">
+      <img src="https://images.igdb.com/igdb/image/upload/t_cover_big/co2fq7.jpg" alt="Fall Guys" class="product rounded transition-all duration-500">
+    </div>
+  </div>
+</div>  
+  </div>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>
