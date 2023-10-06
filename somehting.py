@@ -1,12 +1,23 @@
-import turtle
-t = turtle.Turtle()
+rows = 20
+column = 3
+playlist = []
 
-sides = int(input("enter the number of sides: "))
-length = int(input("enter the length of each side: "))
-angle = ((sides-2)*180)/sides
-repeat = 0 
+class Song:
+    def __init__(self, title, artist, explicit):
+        self.title = title
+        self.artist = artist
+        self.explicit = explicit
 
-while repeat != sides + 1 :
-    t.forward(length)
-    t.right(angle)
-    repeat = repeat + 1
+i = 0
+while i < rows:
+    title = input("Input song name: ")
+    artist = input("Input song artist: ")
+    explicit = input("Is the song explicit? (yes/no): ")
+    
+    song = Song(title, artist, explicit)
+    playlist.append(song)
+    
+    i += 1
+
+for song in playlist:
+    print(f"Title: {song.title}, Artist: {song.artist}, Explicit: {song.explicit}")
