@@ -20,7 +20,7 @@ def shuffle(a, shuffle_count):
         a[i], a[r] = a[r], a[i]
     print(f"Shuffle count: {shuffle_count}, Array: {a}")
 
-a = [1,3,2,9,65,43,22,56,55,34]
+a = [1,3,2,9,11,15,232,6567,34,23,57,6,67]
 bogoSort(a)
 print("\nSorted array:")
 for i in range(len(a)):
