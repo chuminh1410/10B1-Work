@@ -31,7 +31,7 @@ booking_number = 0
 print("\nWelcome to Wildlife Park booking system.\nYou may book a week in advance.\n")
 
 bookingopen = input("Would you like to book? (Y/N")
-while bookingopen == "Y":
+while bookingopen.upper() == "Y":
     booking_number =  booking_number + 1
     numdays = int(input("Would you like to book for one day or two? Type 1 or 2"))
     while numdays != 1 and numdays != 2:
