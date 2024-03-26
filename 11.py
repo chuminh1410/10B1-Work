@@ -1,8 +1,18 @@
-list1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-list2 = [2, 4, 6, 8,]
+# Program to perform a bubble sort
 
-for i in range(0,len(list2)-1):
-    for x in range(0,len(list1)-1):
-        if list1[x] == list2[i]:
-            list1.pop(x)
-print(list1)
+userName = ["Carl","Tamsin","Eric","Zoe","Alan","Mark"]
+print ("list of unsorted names: ", userName)
+#numItems is the length of the list
+numItems = len(userName)
+while numItems > 1:
+    for count in range(5):
+        if userName[count] > userName[count+1]:
+            temp = userName[count+1] 
+            userName[count] = userName[count+1] 
+            userName[count+1] = temp
+        print ("count = ",count, "userName[count] = ", userName[count],
+               "userName[count+1] = ",userName[count+1])
+    numItems = numItems - 1
+    #endfor
+#endwhile
+print (userName)
