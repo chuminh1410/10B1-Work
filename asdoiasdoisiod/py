@@ -1,3 +1,4 @@
+import time 
 def bubbleSort(arr):
 	n = len(arr)
 	swapped = False
@@ -11,10 +12,16 @@ def bubbleSort(arr):
 			return
 
 
-arr = [64, 34, 25, 12, 22, 11, 90]
+test_list = [9, 7, 5, 3, 1, 2, 4, 6, 8]
 
-bubbleSort(arr)
+trials = 100000
+start_time = time.time()
 
-print("Sorted array is:")
-for i in range(len(arr)):
-	print("% d" % arr[i], end=" ")
+for _ in range(trials):
+    bubbleSort(test_list.copy())
+
+end_time = time.time()
+
+average_time = (end_time - start_time) / trials
+
+print("Time Taken for {} trials: {:.6f} seconds".format(trials, average_time))
