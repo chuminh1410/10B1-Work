@@ -1,8 +1,11 @@
-name = []
+names = []
+last_names = []
+
 for i in range(0, 5):
     nameinput = input("Name: ")
-    name.append(nameinput)
+    names.append(nameinput)
 
-name.sort()
+for name in names:
+    last_name = name.split()[-1]
+    last_names.append(last_name)
 
-print("Last name:", name[-1])

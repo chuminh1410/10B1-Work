@@ -1,26 +1,34 @@
-import time
-def binary_search(value, array):
-    left, right = 0, len(array) - 1
-    while left <= right:
-        mid = (left + right) // 2
-        if array[mid] == value:
+import random
+array1 = [None] * 20
+for i in range(0,20):
+    num = random.randint(0,100)
+    array1[i] = num
+
+pointer = len(array1) - 1
+while pointer > 0:
+    swapped = False
+    for a in range(pointer):
+        if array1[a] > array1[a + 1]:
+            array1[a], array1[a + 1] = array1[a + 1], array1[a]
+            swapped = True
+    if not swapped:
+        break
+    pointer -= 1
+    
+print(array1)
+value = 10
+def binary_search(value, array1):
+    low = 0
+    high = len(array1) - 1
+    while low <= high:
+        mid = (low + high) // 2
+        if array1[mid] == value:
             return mid
-        elif array[mid] < value:
-            left = mid + 1
+        elif array1[mid] > value:
+            high = mid - 1
         else:
-            right = mid - 1
+            low = mid + 1
+    
     return -1
 
-test_list = [9, 7, 5, 3, 1, 2, 4, 6, 8]
-
-trials = 1000  
-start_time = time.time()
-
-for _ in range(trials):
-    binary_search(test_list.copy())
-
-end_time = time.time()
-
-average_time = (end_time - start_time) / trials
-
-print("Time Taken for {} trials: {:.6f} seconds".format(trials, average_time))
+binary_search(value,array1)
